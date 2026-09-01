@@ -1,6 +1,0 @@
-interface:
-  display_name: "WallGodds Web"
-  short_description: "Repo-specific patterns and workflows for WallGodds-Web"
-  default_prompt: "Use the WallGodds-Web repo skill to follow existing architecture, testing, and workflow conventions."
-policy:
-  allow_implicit_invocation: true
