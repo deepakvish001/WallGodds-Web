@@ -90,15 +90,6 @@
     gap: 1.25rem;
 }
 
-/* Wireframe Elements */
-.wireframeBox {
-    background-color: rgba(0,0,0,0.25);
-    border: 1px solid black;
-    background-image: 
-        linear-gradient(to top right, transparent calc(50% - 1px), #4a4a4a 50%, transparent calc(50% + 1px)),
-        linear-gradient(to bottom right, transparent calc(50% - 1px), #4a4a4a 50%, transparent calc(50% + 1px));
-}
-
 /* Profile Pic overlap */
 .profilePic {
     width: 90%;
@@ -107,29 +98,113 @@
     position: relative;
     z-index: 10;
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    object-fit: cover;
+    background-color: #f0f0f0;
 }
 
-/* Banner (FIX: Small Rectangular Box) */
-.banner {
-    width: 50%;
-    height: 7.5rem; 
-    margin-bottom: 1rem;
+/* User Details Section */
+.userDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    position: relative;
+    margin-top: 1rem;
 }
 
-.closeBtn {
-    position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: rgba(0,0,0,0.3); 
-    border: 1px solid #7b7c86;
-    background-image: 
-        linear-gradient(to top right, transparent calc(50% - 1px), #4a4a4a 50%, transparent calc(50% + 1px)),
-        linear-gradient(to bottom right, transparent calc(50% - 1px), #4a4a4a 50%, transparent calc(50% + 1px));
+.nameRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.userName {
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.editBtn {
+    background: none;
+    border: none;
     cursor: pointer;
-    opacity: 0.6;
-    border-radius: 0.2rem;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    transition: background-color 0.2s;
+}
+
+.editBtn:hover {
+    background-color: rgba(0,0,0,0.05);
+    color: #333;
+}
+
+.handleRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.userHandle {
+    font-weight: 500;
+}
+
+.tagsRow {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tagPill {
+    background-color: #f0f0f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    color: #555;
+    font-family: "Poppins", sans-serif;
+    border: 1px solid #e0e0e0;
+}
+
+.locationRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.locationText {
+    font-weight: 400;
+}
+
+.shareBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    color: #666;
+    transition: background-color 0.2s;
+}
+
+.shareBtn:hover {
+    background-color: rgba(0,0,0,0.05);
+    color: #333;
 }
 
 /* SOCIAL BOX */
@@ -319,6 +394,26 @@
     color: #a0a0a0;
 }
 
+:global(.dark-theme) .userName {
+    color: #fff;
+}
+:global(.dark-theme) .handleRow,
+:global(.dark-theme) .locationRow,
+:global(.dark-theme) .editBtn,
+:global(.dark-theme) .shareBtn {
+    color: #aaa;
+}
+:global(.dark-theme) .tagPill {
+    background-color: #333;
+    border-color: #444;
+    color: #ccc;
+}
+:global(.dark-theme) .editBtn:hover,
+:global(.dark-theme) .shareBtn:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .navbarWrapper { position: relative; }
@@ -344,7 +439,6 @@
 
     .contentGrid { flex-direction: column; gap: 1.5rem; }
     .leftCol, .rightCol { width: 100%; }
-    .banner { height: 8rem; }
     
     .wallsWrapper { 
         width: 90%; 
